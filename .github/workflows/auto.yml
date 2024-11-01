@@ -33,9 +33,10 @@ jobs:
           yarn
           yarn checkin
           echo "Update at: $(date +'%Y%m%d%H%M%S')" >> UPDATE
+          ls -a
       - uses: EndBug/add-and-commit@v9
         with:
-          add: 'UPDATE'
+          add: '.'
           author_name: action
           author_email: action@gh.com
           committer_name: action
