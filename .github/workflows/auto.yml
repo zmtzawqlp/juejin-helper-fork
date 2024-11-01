@@ -41,6 +41,7 @@ jobs:
           author_email: action@gh.com
           committer_name: action
           committer_email: action@gh.com
+          message: "$(date +'%Y%m%d%H%M%S')"
 #  SeaGold:
 #    needs: CheckIn
 #    runs-on: ubuntu-latest
