@@ -32,7 +32,17 @@ jobs:
           cd workflows
           yarn
           yarn checkin
+      - id: create_tag_name
+        uses: prompt/actions-commit-hash@v3
 
+      - name: Create Tag
+        id: create_tag
+        run: |
+          echo "TAG_NAME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+          git tag ${{ env.TAG_NAME }}
+          git push origin ${{ env.TAG_NAME }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #  SeaGold:
 #    needs: CheckIn
 #    runs-on: ubuntu-latest
