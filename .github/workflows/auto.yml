@@ -2,8 +2,9 @@ name: Auto
 
 on:
   schedule:
-    - cron: "30 22 * * *"
-    - cron: "30 10 * * *"
+    - cron: "0 23 * * *"  # CST 早上 7 点 -> UTC 23 点
+    - cron: "0 1 * * *"   # CST 早上 9 点 -> UTC 1 点
+    - cron: "0 4 * * *"   # CST 中午 12 点 -> UTC 4 点
   workflow_dispatch:
 
 env:
